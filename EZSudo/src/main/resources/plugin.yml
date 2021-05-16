@@ -1,0 +1,59 @@
+name: EZSudo
+version: ${project.version}
+main: Main.Main
+api-version: 1.16
+prefix: EZSudo
+authors: [ FireRoz ]
+description: Sudo players
+
+
+commands:
+  ezsudoreload:
+  sudo:
+  masssay:
+
+permissions:
+  ezsudo.reload:
+    default: op
+  ezsudo.sudo:
+    default: op
+  ezsudo.sudo.message:
+    default: op
+  ezsudo.sudo.command:
+    default: op
+  ezsudo.sudo.exempt:
+    default: op
+  ezsudo.masssay:
+    default: op
+  ezsudo.masssay.message:
+    default: op
+  ezsudo.masssay.command:
+    default: op
+  ezsudo.masssay.exempt:
+    default: op
+  ezsudo.sudo.*:
+    default: op
+    children:
+      ezsudo.sudo.command: true
+      ezsudo.sudo: true
+      ezsudo.sudo.message: true
+      ezsudo.sudo.exempt: true
+  ezsudo.masssay.*:
+    default: op
+    children:
+      ezsudo.masssay.command: true
+      ezsudo.masssay: true
+      ezsudo.masssay.message: true
+      ezsudo.masssay.exempt: true
+  ezsudo.*:
+    default: op
+    children:
+      ezsudo.sudo: true
+      ezsudo.sudo.message: true
+      ezsudo.sudo.command: true
+      ezsudo.sudo.exempt: true
+      ezsudo.masssay: true
+      ezsudo.masssay.message: true
+      ezsudo.masssay.command: true
+      ezsudo.masssay.exempt: true
+      ezsudo.reload: true

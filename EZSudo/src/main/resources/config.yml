@@ -1,0 +1,7 @@
+# Thank you for downloading EZSudo
+# Made in <3 by FireRoz
+
+# Message that shows when a player doesn't have permission to execute a command
+noperm: "&cAccess denied&7!"
+# Delay between messages in /masssay (IN TICKS)
+delay: 5
