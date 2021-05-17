@@ -32,15 +32,16 @@ public class CommandSudo implements CommandExecutor {
                     if (target.hasPermission("ezsudo.sudo.exempt") && !(sender instanceof ConsoleCommandSender)) {
                         sender.sendMessage(ChatColor.RED + "Player is exempt.");
                     } else {
-                        if (args[1].startsWith("/")) {
+                        String msg = String.join(" ", args[1]);
+                        if (msg.startsWith("/")) {
                             if (sender.hasPermission("ezsudo.sudo.command")) {
-                                target.chat(args[1]);
+                                target.chat(msg);
                             } else {
                                 sender.sendMessage(plugin.noperm);
                             }
                         } else {
                             if (sender.hasPermission("ezsudo.sudo.message")) {
-                                target.chat(args[1]);
+                                target.chat(msg);
                             } else {
                                 sender.sendMessage(plugin.noperm);
                             }

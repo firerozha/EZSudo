@@ -24,7 +24,8 @@ public class CommandMasssay implements CommandExecutor {
             if(args.length < 1) {
                 sender.sendMessage(ChatColor.GOLD + "Missing arguments! " + ChatColor.RED + "/masssay <message>");
             } else {
-                        if (args[0].startsWith("/")) {
+                String msg = String.join(" ", args);
+                        if (msg.startsWith("/")) {
                             if (sender.hasPermission("ezsudo.masssay.command")) {
 
                                 new BukkitRunnable() {
@@ -32,7 +33,7 @@ public class CommandMasssay implements CommandExecutor {
                                     public void run() {
                                         for(Player all : Bukkit.getOnlinePlayers()) {
                                             if(!all.hasPermission("ezsudo.masssay.exempt")) {
-                                                all.chat(args[0]);
+                                                all.chat(msg);
                                             }
                                         }
                                     }
@@ -49,7 +50,7 @@ public class CommandMasssay implements CommandExecutor {
                                     public void run() {
                                         for(Player all : Bukkit.getOnlinePlayers()) {
                                             if(!all.hasPermission("ezsudo.masssay.exempt")) {
-                                                all.chat(args[0]);
+                                                all.chat(msg);
                                             }
                                         }
                                     }
